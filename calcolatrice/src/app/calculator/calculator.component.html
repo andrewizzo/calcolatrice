@@ -1,6 +1,6 @@
-<div class="container-fluid bgCustom d-flex vh-100">
-    <div class="container d-flex flex-column justify-content-center align-items-center gap-5 rounded border border-dark customWidth">
-        <div class="d-flex flex-row rounded border border-dark border-2 p-2 w-25 justify-content-between">
+<div class="container-fluid bgCustom d-flex vh-100" [ngClass]="backgroundColorClass">
+    <div class="container d-flex flex-column justify-content-center align-items-center gap-5 customMaxWidth">
+        <div class="d-flex flex-row rounded p-2 customWidth justify-content-between customBoxShadow1">
             <div class="p-3 d-flex align-items-center">
                 <span class="fs-1">{{display}}</span>
             </div>
@@ -8,84 +8,88 @@
                 <span class="fs-1 colorRes">=</span>
             </div>
         </div>
-        <div>
-            <div>
-                <div>
-
+        <div class="w-100 d-flex justify-content-end">
+            <div class="w-25 customBoxShadow2 rounded-pill">
+                <div class="rounded-pill w-100 h-100">
+                    <button (click)="swipe()" [ngClass]="swipeClass" class="border-0 bg-transparent h-100 ">
+                        <img src="../../assets/swap.png" class="p-2 colorRes2 rounded-circle h-75 customBoxShadow2">
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="d-flex flex-column gap-2 rounded border border-dark border-2 justify-content-center align-items-center">
-            <div class="p-4 d-flex gap-3 flex-column">
-                <div class="d-flex flex-row gap-3">
-                    <button (click)="clearCalculator()" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton colorRes">
+        <div class="d-flex flex-column gap-2 rounded justify-content-center align-items-center customWidth customBoxShadow2">
+            <div class="p-4 d-flex gap-3 flex-column w-100">
+                <div class="d-flex flex-row gap-3 w-100">
+                    <button (click)="clearCalculator()" class="bg-transparent border-0 rounded p-3 fs-3 customWidthButton colorRes customBoxShadow1">
                         AC
                     </button>
-                    <button class="bg-transparent rounded-circle p-3 fs-3 customWidthButton colorRes" (click)="setOperatore('/')">
+                    <button class="bg-transparent border-0 rounded p-3 fs-3 customWidthButton colorRes customBoxShadow1" (click)="setOperatore('/')">
                         /
                     </button>
-                    <button class="bg-transparent rounded-circle p-3 fs-3 customWidthButton colorRes" (click)="setOperatore('*')">
+                    <button class="bg-transparent border-0 rounded p-3 fs-3 customWidthButton colorRes customBoxShadow1" (click)="setOperatore('*')">
                         *
                     </button>
-                    <button class="bg-transparent rounded-circle p-3 fs-3 customWidthButton colorRes"> 
+                    <button class="bg-transparent border-0 rounded p-3 fs-3 customWidthButton colorRes customBoxShadow1" (click)="clearOnlyOne()"> 
                         C
                     </button>
                 </div>
                 <div class="d-flex flex-row gap-3">
-                    <button (click)="appendNumber('7')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
+                    <button (click)="appendNumber('7')" class="bg-transparent rounded p-3 fs-3 customWidthButton border-0 customBoxShadow1">
                         7
                     </button>
-                    <button (click)="appendNumber('8')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
+                    <button (click)="appendNumber('8')" class="bg-transparent rounded p-3 fs-3 customWidthButton border-0 customBoxShadow1">
                         8
                     </button>
-                    <button (click)="appendNumber('9')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
+                    <button (click)="appendNumber('9')" class="bg-transparent rounded p-3 fs-3 customWidthButton border-0 customBoxShadow1">
                         9
                     </button>
-                    <button class="bg-transparent rounded-circle p-3 fs-3 customWidthButton colorRes" (click)="setOperatore('-')">
+                    <button class="bg-transparent rounded p-3 fs-3 customWidthButton colorRes border-0 customBoxShadow1" (click)="setOperatore('-')">
                         -
                     </button>
                 </div>
                 <div class="d-flex flex-row gap-3">
-                    <button (click)="appendNumber('4')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
+                    <button (click)="appendNumber('4')" class="bg-transparent rounded p-3 fs-3 customWidthButton  border-0 customBoxShadow1">
                         4
                     </button>
-                    <button (click)="appendNumber('5')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
+                    <button (click)="appendNumber('5')" class="bg-transparent rounded p-3 fs-3 customWidthButton  border-0 customBoxShadow1">
                         5
                     </button>
-                    <button (click)="appendNumber('6')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
+                    <button (click)="appendNumber('6')" class="bg-transparent rounded p-3 fs-3 customWidthButton  border-0 customBoxShadow1">
                         6
                     </button>
-                    <button class="bg-transparent rounded-circle p-3 fs-3 customWidthButton colorRes" (click)="setOperatore('+')">
+                    <button class="bg-transparent rounded p-3 fs-3 customWidthButton colorRes  border-0 customBoxShadow1" (click)="setOperatore('+')">
                         +
                     </button>
                 </div>
                 <div class="d-flex gap-3 flex-row">
-                    <div class="d-flex flex-column gap-3">
-                        <div class="d-flex flex-row gap-3">
-                            <button (click)="appendNumber('1')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
+                    <div class="d-flex flex-row gap-3 w-100">
+                        <div class="d-flex flex-column gap-3 w-100">
+                            <button (click)="appendNumber('1')" class="bg-transparent rounded p-3 fs-3 customWidthButton  border-0 customBoxShadow1">
                                 1
                             </button>
-                            <button (click)="appendNumber('2')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
-                                2
-                            </button>
-                            <button (click)="appendNumber('3')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
-                                3
-                            </button>
-                        </div>
-                        <div class="d-flex flex-row gap-3">
-                            <button class="bg-transparent rounded-circle p-3 fs-3 customWidthButton colorRes">
+                            <button class="bg-transparent rounded p-3 fs-3 customWidthButton colorRes  border-0 customBoxShadow1">
                                 %
                             </button>
-                            <button (click)="appendNumber('0')" class="bg-transparent rounded-circle p-3 fs-3 customWidthButton">
+                        </div>
+                        <div class="d-flex flex-column gap-3 w-100">
+                            <button (click)="appendNumber('2')" class="bg-transparent rounded p-3 fs-3 customWidthButton  border-0 customBoxShadow1">
+                                2
+                            </button>
+                            <button (click)="appendNumber('0')" class="bg-transparent rounded p-3 fs-3 customWidthButton  border-0 customBoxShadow1">
                                 0
                             </button>
-                            <button class="bg-transparent rounded-circle p-3 fs-3 customWidthButton colorRes" (click)="appendNumber(',')">
+                        </div>
+                        <div class="d-flex flex-column gap-3 w-100">
+                            <button (click)="appendNumber('3')" class="bg-transparent rounded p-3 fs-3 customWidthButton  border-0 customBoxShadow1">
+                                3
+                            </button>
+                            <button class="bg-transparent rounded p-3 fs-3 customWidthButton colorRes  border-0 customBoxShadow1" (click)="appendNumber(',')">
                                 ,
                             </button>
                         </div>
-                    </div>
-                    <div class="w-100">
-                        <button class="h-100 w-2 bg-transparent rounded colorRes" (click)="caluclate()">=</button>
+                        <div class="w-100">
+                            <button class="h-100 w-2 bg-transparent rounded colorRes border-0 customWidthButton customBoxShadow1 fs-3" (click)="caluclate()">=</button>
+                        </div>
                     </div>
                 </div>
             </div>

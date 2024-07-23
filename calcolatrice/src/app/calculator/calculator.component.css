@@ -3,13 +3,72 @@
 }
 
 .customWidthButton{
-    width: 70px;
+    /* width: 100px */
+    width: 100%;
+    min-width: 60px;
 }
 
 .colorRes{
     color:#29C7AC;
 }
 
-.customWidth{
-    width: 20%;
+.colorRes2{
+    background-color:#29C7AC;
 }
+
+.customWidth{
+    width: 100%;
+}
+
+.customBoxShadow1{
+    box-shadow: rgb(117, 117, 117) 2px 2px 4px,
+    rgb(176, 176, 176) -2px -2px 4px
+}
+
+.customBoxShadow2{
+    box-shadow:inset rgb(117, 117, 117) 2px 2px 4px,
+    inset rgb(176, 176, 176) -2px -2px 4px
+}
+
+.customMaxWidth{
+    max-width: 510px;
+}
+
+/* Definire le animazioni per lo swipe verso destra e verso sinistra */
+@keyframes swipeRight {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(131%); /* Cambia il valore secondo le tue necessità */
+    }
+  }
+  
+  @keyframes swipeLeft {
+    from {
+      transform: translateX(131%);
+    }
+    to {
+      transform: translateX(0); /* Cambia il valore secondo le tue necessità */
+    }
+  }
+  
+  /* Applicare le animazioni in base allo stato */
+  .swipe-right {
+    animation: swipeRight 0.5s forwards;
+  }
+  
+  .swipe-left {
+    animation: swipeLeft 0.5s forwards;
+  }
+
+.background-color-1 {
+    background-color: #F7ECDE;
+}
+
+.background-color-2 {
+    background-color: #D69A97;
+}
+
+  
+  
